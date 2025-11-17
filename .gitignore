@@ -1,0 +1,33 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.env
+.DS_Store
+build/
+dist/
+tmp/
+*.log
+*.tgz
+.pnp/
+.pnp.js
+
+# React Specific
+.cache/
+.parcel-cache/
+coverage/
+# For Create React App:
+build/
+# For Next.js:
+.next/
+# For Gatsby:
+public/
+.cache/
+
+# IDE and OS Specific
+.idea/
+.vscode/
+*.swp
+*~
+.eslintcache
