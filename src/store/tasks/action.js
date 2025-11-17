@@ -1,5 +1,4 @@
-import { ADD_TASK, COMPLETED_TASK, REMOVE_TASK } from "./actionTypes";
-
+import { createAction } from "@reduxjs/toolkit";
 export const fetchTodo = () =>
   async function (dispatch, getState) {
     const response = await fetch(
@@ -10,14 +9,6 @@ export const fetchTodo = () =>
     dispatch(addTask(data.title));
   };
 
-export const addTask = (task) => {
-  return { type: ADD_TASK, payload: { task: task } };
-};
-
-export const removeTask = (id) => {
-  return { type: REMOVE_TASK, payload: { id: id } };
-};
-
-export const completeTask = (id) => {
-  return { type: COMPLETED_TASK, payload: { id: id } };
-};
+export const addTask = createAction("ADD_TASK");
+export const removeTask = createAction("REMOVE_TASK");
+export const taskCompleted = createAction("TASK_COMPLETED");

@@ -1,22 +1,24 @@
 import {
   addTask,
-  completeTask,
+  taskCompleted,
   fetchTodo,
   removeTask,
 } from "./store/tasks/action";
-import store from "./store/store";
+import store from "./store/configureStore";
+
 console.log("Redux Starter Project!!");
 console.log(store.getState());
 const unsubscribe = store.subscribe(() => {
   console.log("Updated...", store.getState());
 });
-store.dispatch(addTask("Task 0"));
-//unsubscribe();
-store.dispatch(removeTask(0));
 
-store.dispatch(addTask("Task 1"));
-store.dispatch(addTask("Task 2"));
-store.dispatch(addTask("Task 3"));
-store.dispatch(completeTask(3));
-store.dispatch(fetchTodo());
+store.dispatch(addTask({ task: "Task 0" }));
+//unsubscribe();
+store.dispatch(removeTask({ id: 0 }));
+
+store.dispatch(addTask({ task: "Task 1" }));
+store.dispatch(addTask({ task: "Task 2" }));
+store.dispatch(addTask({ task: "Task 3" }));
+store.dispatch(taskCompleted({ id: 3 }));
+//store.dispatch(fetchTodo()); // use store.js that use thunk
 console.log(store.getState());
