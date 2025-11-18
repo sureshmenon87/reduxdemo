@@ -5,6 +5,7 @@
   removeTask,
 } from "./store/tasks/action";*/
 import store from "./store/configureStore";
+import { addEmployee } from "./store/employees";
 import { addTask, removeTask, completedTask } from "./store/tasks/tasks";
 
 console.log("Redux Starter Project!!");
@@ -22,4 +23,5 @@ store.dispatch(addTask({ task: "Task 2" }));
 store.dispatch(addTask({ task: "Task 3" }));
 store.dispatch(completedTask({ id: 3 }));
 //store.dispatch(fetchTodo()); // use store.js that use thunk
+store.dispatch(addEmployee({ name: "Harley" }));
 console.log(store.getState());
