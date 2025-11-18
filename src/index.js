@@ -1,10 +1,11 @@
-import {
+/*import {
   addTask,
   taskCompleted,
   fetchTodo,
   removeTask,
-} from "./store/tasks/action";
+} from "./store/tasks/action";*/
 import store from "./store/configureStore";
+import { addTask, removeTask, completedTask } from "./store/tasks/tasks";
 
 console.log("Redux Starter Project!!");
 console.log(store.getState());
@@ -19,6 +20,6 @@ store.dispatch(removeTask({ id: 0 }));
 store.dispatch(addTask({ task: "Task 1" }));
 store.dispatch(addTask({ task: "Task 2" }));
 store.dispatch(addTask({ task: "Task 3" }));
-store.dispatch(taskCompleted({ id: 3 }));
+store.dispatch(completedTask({ id: 3 }));
 //store.dispatch(fetchTodo()); // use store.js that use thunk
 console.log(store.getState());
